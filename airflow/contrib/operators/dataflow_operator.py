@@ -145,7 +145,7 @@ class DataFlowJavaOperator(BaseOperator):
                                  self.jar, self.job_class)
 
 
-class DataflowTemplateOperator(BaseOperator):
+class DataFlowTemplateOperator(BaseOperator):
     """
     Start a Templated Cloud DataFlow batch job. The parameters of the operation
     will be passed to the job.
@@ -173,7 +173,7 @@ class DataflowTemplateOperator(BaseOperator):
 
     .. code-block:: python
 
-       t1 = DataflowTemplateOperator(
+       t1 = DataFlowTemplateOperator(
            task_id='datapflow_example',
            template='{{var.value.gcp_dataflow_base}}',
            parameters={
@@ -201,7 +201,7 @@ class DataflowTemplateOperator(BaseOperator):
             *args,
             **kwargs):
         """
-        Create a new DataflowTemplateOperator. Note that
+        Create a new DataFlowTemplateOperator. Note that
         dataflow_default_options is expected to save high-level options
         for project information, which apply to all dataflow operators in the DAG.
 
@@ -230,7 +230,7 @@ class DataflowTemplateOperator(BaseOperator):
             JOB_STATE_RUNNING state.
         :type poll_sleep: int
         """
-        super(DataflowTemplateOperator, self).__init__(*args, **kwargs)
+        super(DataFlowTemplateOperator, self).__init__(*args, **kwargs)
 
         dataflow_default_options = dataflow_default_options or {}
         parameters = parameters or {}
